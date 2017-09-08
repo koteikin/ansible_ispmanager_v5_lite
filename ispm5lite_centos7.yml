@@ -1,0 +1,12 @@
+---
+- name: Install ISPmanager v5 Lite on CentOS 7.
+  hosts: install_host
+  sudo: yes
+  tasks:
+  - name: Download installer
+    get_url:
+      url: http://cdn.ispsystem.com/install.sh
+      dest: /root/install.sh
+      mode: 0777
+  - name: Run installer
+    script: /bin/sh /root/install.sh  --osfamily REDHAT --osversion 7 --release stable --disable-fail2ban --ignore-hostname --silent ISPmanager-Lite

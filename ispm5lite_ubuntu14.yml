@@ -1,0 +1,10 @@
+---
+- name: Install ISPmanager v5 Lite on Ubuntu 14.04.
+  hosts: new_host
+  user: root
+  sudo: yes
+  tasks:
+  - name: Download installer
+    get_url: url=http://cdn.ispsystem.com/install.sh dest=/root/install.sh
+  - name: Run installer
+    script: /root/install.sh  --osfamily DEBIAN --osversion trusty --release stable --disable-fail2ban --ignore-hostname --silent ISPmanager-Lite

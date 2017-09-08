@@ -1,0 +1,1 @@
+# ansible_ispmanager_v5_lite
